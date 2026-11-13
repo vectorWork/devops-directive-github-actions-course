@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: traer files
-        uses: actions/checkout@0e2f4c04030eeeb735b6abd696a63ec2cd56c106
+        uses: actions/checkout@v4
 
       - name: create artifact
-        uses: actions/upload-artifact@0e2f4c04030eeeb735b6abd696a63ec2cd56c106
+        uses: actions/upload-artifact@v4
         with:
           name: file-txt
           path: archivo1.txt
@@ -21,7 +21,7 @@ jobs:
     needs: job-upload-artifact
     steps:
       - name: download artifact
-        uses: actions/download-artifact@0e2f4c04030eeeb735b6abd696a63ec2cd56c106
+        uses: actions/download-artifact@v4
         with:
           name: file-txt
       - name: leer archivo
