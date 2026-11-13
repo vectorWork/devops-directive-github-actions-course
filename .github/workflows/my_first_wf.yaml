@@ -9,7 +9,8 @@ jobs:
     steps:
       - name: traer files
         uses: actions/checkout@v4
-
+        with:
+          ref: 0e2f4c04030eeeb735b6abd696a63ec2cd56c106
       - name: create artifact
         uses: actions/upload-artifact@v4
         with:
