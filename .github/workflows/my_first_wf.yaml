@@ -1,0 +1,28 @@
+name: my first workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  job-upload-artifact:
+    name: upload artifact
+    runs-on: ubuntu-24.04
+    steps:
+      - name: traer files
+        uses: actions/checkout@0e2f4c04030eeeb735b6abd696a63ec2cd56c106
+
+      - name: create artifact
+        uses: actions/upload-artifact@0e2f4c04030eeeb735b6abd696a63ec2cd56c106
+        with:
+          name: file-txt
+          path: archivo1.txt
+  job-download-artifact:
+    name: download artifact
+    runs-on: ubuntu-24.04
+    needs: job-upload-artifact
+    steps:
+      - name: download artifact
+        uses: actions/download-artifact@0e2f4c04030eeeb735b6abd696a63ec2cd56c106
+        with:
+          name: file-txt
+      - name: leer archivo
+        run: cat archivo1.txt
