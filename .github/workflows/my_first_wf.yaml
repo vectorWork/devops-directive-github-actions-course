@@ -10,7 +10,7 @@ jobs:
       - name: traer files
         uses: actions/checkout@v4
         with:
-          ref: 0e2f4c04030eeeb735b6abd696a63ec2cd56c106
+          ref: 87474a2b297c0795e663e9ae6f58d9d9cc473b63
       - name: create artifact
         uses: actions/upload-artifact@v4
         with:
